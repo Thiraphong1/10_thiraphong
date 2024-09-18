@@ -1,0 +1,173 @@
+docker -v
+docker run hello-world
+docker ps --all
+docker run busybox ping google.com
+docker stop 8a3c2c3f5009
+docker pull busybox
+docker create busybox ping google.com
+docker pull busybox
+docker create busybox ping google.com
+docker start e0b4e3e602060c01c59142a003d42582a070dd0860b0a28535c4a58e1751267e
+docker stop e0b4e3e602060c01c59142a003d42582a070dd0860b0a28535c4a58e1751267e
+docker system prune
+docker run -p 8800:80 nginx
+docker run -d -p 7800:80 nginx
+docker info
+docker df
+docker images
+docker images rm hello-world
+docker images busybox
+docker images rm  busybox
+docker system df
+docker images rm busybox
+docker images
+
+
+PS C:\Users\SC9-406-28\Desktop> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                  NAMES
+fff56ae65aa2   nginx     "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   0.0.0.0:8800->80/tcp   fervent_allen    
+50bc0c1abdcd   nginx     "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes   0.0.0.0:80->80/tcp     determined_sammet
+PS C:\Users\SC9-406-28\Desktop> docker run -d -p 7800:80 nginx
+de53447595f9e560d073839c3209f2fea84746eea731aee30251a2a9a80c9c8c
+PS C:\Users\SC9-406-28\Desktop> docker info
+Client:
+ Version:    24.0.7
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.12.0-desktop.2
+    Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe 
+  compose: Docker Compose (Docker Inc.)
+    Version:  v2.23.3-desktop.2
+    Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+  dev: Docker Dev Environments (Docker Inc.)
+    Version:  v0.1.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-dev.exe    
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.21
+    Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+  feedback: Provide feedback, right in your terminal! (Docker Inc.)
+    Version:  0.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-feedback.exe
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v0.1.0-beta.10
+    Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+  sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+    Version:  0.6.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sbom.exe
+  scan: Docker Scan (Docker Inc.)
+    Version:  v0.26.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-scan.exe
+  scout: Docker Scout (Docker Inc.)
+    Version:  v1.2.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-scout.exe
+
+Server:
+ Containers: 3
+  Running: 3
+  Paused: 0
+  Stopped: 0
+ Images: 8
+ Server Version: 24.0.7
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 1
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: runc io.containerd.runc.v2
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: d8f198a4ed8892c764191ef7b3b06d8a2eeb5c7f
+ runc version: v1.1.10-0-g18a0cb0
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: unconfined
+ Kernel Version: 5.15.133.1-microsoft-standard-WSL2
+ Operating System: Docker Desktop
+ OSType: linux
+ CPUs: 8
+ Total Memory: 3.801GiB
+ ID: 05d2302d-9253-48f8-87dd-b78591ce84e9
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ HTTP Proxy: http.docker.internal:3128
+ HTTPS Proxy: http.docker.internal:3128
+ No Proxy: hubproxy.docker.internal
+ Experimental: false
+ Insecure Registries:
+  hubproxy.docker.internal:5555
+ Live Restore Enabled: false
+
+WARNING: No blkio throttle.read_bps_device support
+WARNING: No blkio throttle.write_bps_device support
+WARNING: No blkio throttle.read_iops_device support
+WARNING: daemon is not using the default seccomp profile
+PS C:\Users\SC9-406-28\Desktop> docker df
+docker: 'df' is not a docker command.
+See 'docker --help'
+PS C:\Users\SC9-406-28\Desktop> docker images
+REPOSITORY              TAG       IMAGE ID       CREATED         SIZE
+nginx                   latest    e4720093a3c1   7 months ago    187MB
+mysql                   latest    019814493c7a   8 months ago    632MB
+phpmyadmin/phpmyadmin   latest    933569f3a9f6   14 months ago   562MB
+busybox                 latest    6fd955f66c23   16 months ago   4.26MB
+hello-world             latest    d2c94e258dcb   16 months ago   13.3kB
+olanlab/json-server     latest    e2158a5aa55a   5 years ago     95.1MB
+PS C:\Users\SC9-406-28\Desktop> docker system df 
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Containers      3         3         3.285kB   0B (0%)
+Local Volumes   1         0         197MB     197MB (100%)
+Build Cache     9         0         0B        0B
+PS C:\Users\SC9-406-28\Desktop> docker images rm hello-world
+"docker images" requires at most 1 argument.
+
+Usage:  docker images [OPTIONS] [REPOSITORY[:TAG]]
+
+List images
+PS C:\Users\SC9-406-28\Desktop> docker images busybox       
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+PS C:\Users\SC9-406-28\Desktop> docker images rm  busybox
+"docker images" requires at most 1 argument.
+See 'docker images --help'.
+
+
+List images
+PS C:\Users\SC9-406-28\Desktop> docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          8         1         1.7GB     1.513GB (89%)
+Containers      3         3         3.285kB   0B (0%)
+Local Volumes   1         0         197MB     197MB (100%)
+Build Cache     9         0         0B        0B
+PS C:\Users\SC9-406-28\Desktop> docker images rm busybox 
+"docker images" requires at most 1 argument.
+See 'docker images --help'.
+
+Usage:  docker images [OPTIONS] [REPOSITORY[:TAG]]
+
+List images
+PS C:\Users\SC9-406-28\Desktop> docker image rm busybox 
+Untagged: busybox:latest
+Untagged: busybox@sha256:c230832bd3b0be59a6c47ed64294f9ce71e91b327957920b6929a0caa8353140
+Deleted: sha256:6fd955f66c231c1a946653170d096a28ac2b2052a02080c0b84ec082a07f7d12
+Deleted: sha256:49b3a50a20394e079b4b4732e1e9e434137c9dd6500a6e1976a00ca88bed4774
+PS C:\Users\SC9-406-28\Desktop> docker images
+REPOSITORY              TAG       IMAGE ID       CREATED         SIZE
+api                     latest    741c724af974   6 months ago    142MB
+nginx                   latest    e4720093a3c1   7 months ago    187MB
+mysql                   latest    019814493c7a   8 months ago    632MB
+ubuntu                  latest    174c8c134b2a   9 months ago    77.9MB
+phpmyadmin/phpmyadmin   latest    933569f3a9f6   14 months ago   562MB
+hello-world             latest    d2c94e258dcb   16 months ago   13.3kB
+olanlab/json-server     latest    e2158a5aa55a   5 years ago     95.1MB
+PS C:\Users\SC9-406-28\Desktop> 
