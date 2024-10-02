@@ -3,3 +3,5 @@ kubectl get all เช้คหมด
 kubectl delete all --all ลบหมดดดดด
 kubectl delete pods client-deployment-6d87bd56c5-zc2tn ลบลูก
  kubectl apply -f . รันทั้งหมด
+http://localhost:30002/api/health
+http://localhost:30002/api/todo
